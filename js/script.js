@@ -45,6 +45,14 @@ const weightInput = document.querySelector("#weight");
 const calcBtn = document.querySelector("#calc-btn");
 const clearBtn = document.querySelector("#clear-btn");
 
+const calcContainer = document.querySelector("#calc-container");
+const resultContainer = document.querySelector("#result-container");
+
+const imcInfo = document.querySelector("#imc-info span");
+const imcNumber = document.querySelector("#imc-number span");
+
+const backBtn = document.querySelector("#back-btn");
+
 // Funções
 function createTable(data) {
     data.forEach((item) => {
@@ -72,6 +80,8 @@ function createTable(data) {
 function clearInputs() {
     heightInput.value = "";
     weightInput.value = "";
+    imcNumber.classList = "";
+    imcInfo.classList = "";
 }
 
 function validDigits(text) {
@@ -84,6 +94,35 @@ function calcImc(weight, height) {
     return imc;
 }
 
+function showOrHide () {
+    resultContainer.classList.toggle("hide");
+    calcContainer.classList.toggle("hide");
+}
+
+function colorClassification(info) {
+    switch (info) {
+        case "Magreza":
+            imcNumber.classList.add("low");
+            imcInfo.classList.add("low");
+        break;
+        case "Normal":
+            imcNumber.classList.add("good");
+            imcInfo.classList.add("good");
+        break;
+        case "Sobrepeso":
+            imcNumber.classList.add("low");
+            imcInfo.classList.add("low");
+        break;
+        case "Obesidade":
+            imcNumber.classList.add("high");
+            imcInfo.classList.add("high");
+        break;
+        case "Obesidade grave":
+            imcNumber.classList.add("high");
+            imcInfo.classList.add("high");
+        break;
+    }
+}
 
 // Inicialização
 createTable(data);
@@ -108,10 +147,33 @@ calcBtn.addEventListener("click", (e) => {
     if (!weight || !height) return;
 
     const imc = calcImc(weight, height);
-    console.log(imc);
+    /* console.log(imc); */
+
+    let info;
+    data.forEach((item) => {
+        // Compara valor imc retornado da função calcImg()
+        if (imc >= item.min && imc <= item.max) {
+            info = item.info;
+        }
+    });
+
+    if (!info) return;
+
+    imcNumber.innerText = imc;
+    imcInfo.innerText = info;
+    /* console.log(info); */
+
+    colorClassification(info);
+    showOrHide();
+
 });
 
 clearBtn.addEventListener("click", (e) => {
     e.preventDefault();
     clearInputs();
 });
+
+backBtn.addEventListener("click", () => {
+    clearInputs();
+    showOrHide();
+})
