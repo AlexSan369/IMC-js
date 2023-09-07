@@ -41,7 +41,7 @@ calcular.addEventListener("click", () => {
 
     const resultSituacao = document.querySelector("p#imc-info span");
     resultSituacao.innerHTML = situacao;
-    const resultTipo = document.querySelectorAll("#table-header p");
+    const resultTipo = document.querySelectorAll(".table-header h4");
     resultTipo[0].innerHTML = situacao;
     resultTipo[1].innerHTML = `Tipo: ${tipo}`;
     resultTipo[2].innerHTML = classificacao;
