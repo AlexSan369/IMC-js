@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <script src="js/main.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,9 +12,9 @@
 </head>
 <body>
     <div class="container">
-        <div id="calc-container">
+        <div id="calc-container" class="">
             <h2>Calculadora de IMC</h2>
-            <form action="" id="imc-form">
+            <div id="imc-form">
                 <div class="form-control">
                     <label for="height">Altura:</label>
                     <input type="text" name="height" id="height"
@@ -29,22 +29,22 @@
                     <button id="calc-btn">Calcular</button>
                     <button id="clear-btn">Limpar</button>
                 </div>
-            </form>
+            </div>
         </div>
-        <div id="result-container">
+        <div id="result-container" class="hide">
             <p id="imc-number">Seu IMC: <span></span></p>
             <p id="imc-info">Situação atual: <span></span></p>
             <h3>Configura as classificações:</h3>
             <div id="imc-table">
                 <div id="table-header">
-                    <h4>IMC</h4>
-                    <h4>Classificação</h4>
-                    <h4>Obessidade</h4>
+                    <p>Menor  18,5</p>
+                    <p>Massa Magra</p>
+                    <p>0</p>
                 </div>
             </div>
             <button id="back-btn">Voltar</button>
         </div>
-    </div>    
+    </div>
 
 </body>
 </html>
