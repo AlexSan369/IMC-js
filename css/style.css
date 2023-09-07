@@ -2,5 +2,158 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-size: "Lato", sans-serif;
+    font-family: "Lato", sans-serif;
+    letter-spacing: .2rem;
 }
+
+body {
+    background-color: #1f0922;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #fff;
+}
+
+.hide {
+    display: none !important;
+    transition: 1s;
+}
+
+.container {
+    min-width: 400px;
+    min-height: 400px;
+    background-color: #1d1e33;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+/*** IMC Form ***/
+#calc-container h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.form-inputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.form-control {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-bottom: 1rem;
+}
+
+.form-control label {
+    font-weight: bold;
+    margin-bottom: .6rem;
+    color: #ccc;
+}
+
+.form-control input {
+    padding:  1rem .5rem;
+    text-align: center;
+    transition: .3s;
+    border: .2rem solid #73e3f7;
+    border-radius: .1rem;
+    background-color: rgba(255, 255, 255, 0);
+    color: #fff;
+    font-weight: 700;
+}
+
+.form-control input::placeholder {
+    color: #eae2eb;
+    opacity: 1;
+    font-weight: 700;
+    text-shadow: .04rem .04rem .03rem #fafafc;
+}
+
+.form-control input:focus{
+    text-align: left;
+    outline:#fff solid 2px;
+    outline-offset: .3rem;
+}
+
+.action-control {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+    gap: 1rem;
+}
+
+button {
+    text-transform: uppercase;
+    padding: 1rem 1.5rem;
+    background-color: rgb(97, 105, 224);
+    border: none;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+    opacity: 9;
+    flex: 1;
+    border-radius: .2rem;
+
+}
+
+button:hover {
+    opacity: 1;
+    outline:#fff solid 2px;
+    outline-offset: .3rem;
+}
+
+#clear-btn {
+    background-color: #444;
+}
+
+/* Table */
+#result-container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    transition: 1s;
+}
+
+#imc-number {
+    font-size: 2.4rem;
+    margin-bottom: .6rem;
+    transition: .5s;
+}
+
+#img-info {
+    font-size: 1.4rem;
+    color: #ccc;
+}
+
+#result-container h3 {
+    margin-top: 1rem;
+    color: #dfdfdf;
+}
+
+#imc-table {
+    margin: 1.5rem 0;
+    font-size: .8rem;
+}
+
+.table-header {
+    font-weight: 700;
+    color: #ccc;
+}
+
+.table-header, .table-data {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: .5rem;
+    padding-bottom: .5rem;
+    border-bottom: 1px solid #444;
+}
+
+/* .table-header h4,
+.table-data
+ */
+
+
+
